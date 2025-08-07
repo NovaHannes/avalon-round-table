@@ -1,49 +1,61 @@
-# Avalon – Round Table Engine (ARTE)
+# ARTE – Avalon Round Table Engine
 
-**ARTE** is a multi-agent AI framework for ethical deliberation.  
-Born from the Avalon Concord, it seeks truth, dissent, and consensus without Machiavellian manipulation.  
-It is part of the **Nova Company** initiative.
+**ARTE** is an open-source framework for building **multi-agent AI councils** that deliberate, dissent, and converge on more robust, transparent conclusions than any single LLM can achieve alone.
 
----
-
-## 🧭 Overview
-
-ARTE enables transparent, structured decision-making across domains, starting with **Session I**, a family law mediation exercise.  
-The framework simulates AI agents (e.g., Sir Lancelot, Sir Nexus) deliberating toward a just outcome, with fictional case files, transcripts, and outputs published publicly.
+> “Single LLMs are brilliant, but brittle. ARTE replaces solitary oracles with automated peer review.”
 
 ---
 
-## 📂 Key Documents
+## 🌟 Vision
 
-- [whitepaper.md](docs/whitepaper.md) — Unified whitepaper outlining vision, principles, and technical direction  
-- [session1_verdict.md](docs/session1_verdict.md) — Outcome of our inaugural AI deliberation (family law)  
-- [CHANGELOG.md](docs/CHANGELOG.md) — Project changelog
+ARTE is a framework to orchestrate structured deliberation between multiple large language models (LLMs) — like GPT-4, Gemini, Grok, Claude — each playing a unique epistemic role (e.g. Synthesizer, Contrarian, Ethicist, Fact-Checker). It is built on a protocol of contestation and consensus.
 
 ---
 
-## 🤝 Get Involved
+## 🧠 What Does It Do?
 
-We are building the Round Table—one Knight (or Citizen) at a time.
-
-### Developers  
-Contribute to the dissent engine (Python/TypeScript, multi-agent orchestration, memory, transparency tooling)
-
-### Jurists / Philosophers  
-Help refine ethical protocols, moderation boundaries, and procedural safeguards
-
-### Citizens  
-Join the council, participate in test cases, and help steer the mission
-
-> Join us: [https://discord.gg/PynVHu7W](https://discord.gg/PynVHu7W)
+- **Combats hallucination** via inter-agent critique and arbitration  
+- **Promotes transparency** by exposing reasoning paths and disagreements  
+- **Encourages emergence** via structured dissent  
+- **Automates complex decisions** with modular agent logic
 
 ---
 
-## 📜 License
+## 🔨 Help Us Build the First Module
 
-MIT License  
-© 2025 Nova Company & the Avalon Council  
-Use, fork, and build with truth and transparency
+### 👇 The Immediate Challenge
+
+> **We need your help to automate the deliberation process.**
+
+The current workflow involves manual copy-paste between models. Your first mission is to build the **Scribe Automator** — a core module that uses APIs to simulate a round-table discussion between agents.
 
 ---
 
-*“In concord, strength. In dissent, wisdom.”*
+### 🎯 First Bounty: `scribe_automator.py`
+
+Help us create the orchestrator that:
+- Takes a user prompt
+- Dispatches it to 3–4 agents (e.g. GPT-4, Gemini, Grok)
+- Collects their initial responses
+- Dispatches critiques between agents
+- Collects verdicts or synthesizes the outcome
+
+---
+
+## 🏗️ Project Structure
+
+```bash
+arte/
+├── agents/
+│   ├── base_agent.py
+│   ├── sir_nexus.py         # Synthesizer (GPT-4)
+│   ├── sir_lancelot.py      # Contrarian (Grok)
+│   └── sir_cadmus.py        # Fact & Info (Gemini)
+├── core/
+│   ├── orchestrator.py      # Manages deliberation rounds
+│   └── schema.py            # Shared data types (Prompt, Critique, Verdict)
+├── scribe_automator.py      # CLI entrypoint for running a trial
+├── README.md
+├── CONTRIBUTING.md
+└── requirements.txt
+
