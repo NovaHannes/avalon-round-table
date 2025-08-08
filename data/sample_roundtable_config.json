@@ -1,0 +1,4 @@
+{
+    "agents": ["Grok", "Claude", "GPT-4"],
+    "prompt": "What is justice in the context of sovereignty?"
+}
