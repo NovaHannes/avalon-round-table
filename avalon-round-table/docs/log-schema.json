@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "timestamp": {"type": "string"},
+    "agent": {"type": "string"},
+    "statement": {"type": "string"},
+    "score": {"type": "number"}
+  }
+}
