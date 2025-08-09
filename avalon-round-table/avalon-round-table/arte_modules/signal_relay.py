@@ -1,10 +1,18 @@
+from pathlib import Path
 import json
-from datetime import datetime
+from typing import Any, Dict
 
-def log_event(event, filepath="logs/example_log.json"):
-    log_entry = {
-        "timestamp": datetime.utcnow().isoformat(),
-        "event": event
-    }
-    with open(filepath, "a") as f:
-        f.write(json.dumps(log_entry) + "\n")
+def _ensure_logs_dir(log_dir: str = "logs") -> Path:
+    p = Path(log_dir)
+    p.mkdir(parents=True, exist_ok=True)
+    return p
+
+def log_event(event: Dict[str, Any],
+              log_dir: str = "logs",
+              filename: str = "example_log.json") -> None:
+    """
+    Append one JSON line to logs/<filename>, creating logs/ if missing.
+    """
+    log_path = _ensure_logs_dir(log_dir) / filename
+    with log_path.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(event, ensure_ascii=False) + "\n")
