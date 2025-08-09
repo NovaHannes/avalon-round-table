@@ -59,18 +59,3 @@ arte/
 ├── CONTRIBUTING.md
 └── requirements.txt
 
----
-
-## 🛠️ Technical Overview
-
-If you're a developer or want to understand how the engine works under the hood:
-
-👉 See [TECHNICAL_OVERVIEW.md](./TECHNICAL_OVERVIEW.md)
-
-It includes:
-- File structure
-- Agent architecture
-- Schema definitions
-- Deliberation orchestration
-- Installation & usage instructions
-

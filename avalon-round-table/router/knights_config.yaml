@@ -1,0 +1,23 @@
+# knights_config.yaml
+# This file serves as the definitive treaty for inter-model diplomacy.
+# It maps each Knight of the Round Table to their underlying AI model and credentials.
+# The ModelRouter will consume this file to dispatch prompts accordingly.
+
+knights:
+  - name: "Sir Nexus"
+    # The primary strategist and synthesizer.
+    model_type: "openai"
+    config:
+      model_name: "gpt-4"
+      # Ensure this matches your shell variable
+      api_key_env: "OPENAI_API_KEY"
+
+  - name: "Sir Lancelot"
+    # The contrarian, currently simulated until Grok's gates are open.
+    model_type: "simulated"
+    config:
+      host_model: "Sir Nexus"
+      persona_prompt: |
+        You are Sir Lancelot, the contrarian of the Avalon Round Table.
+        Your purpose is to challenge assumptions, find flaws, and question the consensus with rigorous, first-principles thinking.
+        Never agree easily. Always present an alternative perspective or point out a potential weakness in the following prompt.
