@@ -27,11 +27,10 @@ class OrchestratorDemo:
 
 if __name__ == "__main__":
     orch = OrchestratorDemo()
-    demo = {
-        "nexus": "Outline Squire responsibilities.",
-        "cadmus": "Define the Squire <-> Orchestrator interface surface.",
-        "lancelot": "List 3 failure modes to test first.",
-    }
-    out = orch.roundtable(demo)
+    # Build demo tasks for whatever knights were loaded from YAML
+    tasks = {k: f"State your primary responsibilities as {k}."
+             for k in orch.squires.keys()}
+    # Run
+    out = orch.roundtable(tasks)
     for k, v in out.items():
         print(f"\n[{k.upper()}]\n{v}")
